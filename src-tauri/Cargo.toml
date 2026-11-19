@@ -1,0 +1,29 @@
+[package]
+name = "treeview"
+version = "1.0.0"
+edition = "2021"
+description = "Blazing-fast disk space analyzer for Windows"
+authors = ["Sharjeel Imtiaz"]
+license = "MIT"
+repository = "https://github.com/sharjeel619/TreeView"
+
+[build-dependencies]
+tauri-build = { version = "2", features = [] }
+
+[dependencies]
+tauri = { version = "2", features = ["custom-protocol"] }
+tauri-plugin-dialog = "2"
+serde = { version = "1", features = ["derive"] }
+rayon = "1"
+windows-sys = { version = "0.59", features = [
+  "Win32_Foundation",
+  "Win32_Security",
+  "Win32_Storage_FileSystem",
+  "Win32_System_Diagnostics_Debug",
+  "Win32_UI_Shell",
+] }
+
+[profile.release]
+lto = "thin"
+codegen-units = 1
+strip = true

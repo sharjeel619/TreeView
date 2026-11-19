@@ -1,0 +1,24 @@
+{
+  "$schema": "https://schema.tauri.app/config/2",
+  "productName": "TreeView",
+  "version": "1.0.0",
+  "identifier": "com.treeview.app",
+  "build": { "frontendDist": "../ui" },
+  "app": {
+    "withGlobalTauri": true,
+    "windows": [
+      { "title": "TreeView", "width": 1320, "height": 820, "minWidth": 860, "minHeight": 520, "center": true }
+    ],
+    "security": { "csp": null }
+  },
+  "bundle": {
+    "active": true,
+    "targets": ["nsis"],
+    "publisher": "Sharjeel Imtiaz",
+    "copyright": "© 2026 Sharjeel Imtiaz",
+    "category": "Utility",
+    "shortDescription": "Blazing-fast disk space analyzer",
+    "longDescription": "TreeView scans drives and folders in parallel and shows where your disk space goes in an expandable, sortable tree.",
+    "icon": ["icons/icon.png", "icons/icon.ico"]
+  }
+}
